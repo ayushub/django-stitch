@@ -13,19 +13,19 @@ def index(request):
  						<title>Online Dating Websites</title>
 					</head>
 					<body>
-					<table border="1">
-						<tr>
-							<th>Website Name</th>
-							<th>Website URL</th>
-						</tr>
+						<table border="1">
+							<tr>
+								<th>Website Name</th>
+								<th>Website URL</th>
+							</tr>
 					"""
 
 	for p in latest_website_list:
 		output += "<tr><td>%s</td><td>%s</td></tr>" % (p.website_name, p.website_url)
-	output += """</table>
-</body></html>"""
+	output += """		</table>
+					</body>
+				</html>"""
 
-	#output = '\n '.join([p.website_name for p in latest_website_list])
 	return HttpResponse(output)
 
 def detail(request, website_id):
